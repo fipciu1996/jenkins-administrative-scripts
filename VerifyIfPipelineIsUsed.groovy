@@ -12,7 +12,7 @@ Jenkins.instance.getAllItems(org.jenkinsci.plugins.workflow.job.WorkflowJob).eac
 		try{
 			String scriptPath = Jenkins.instance.getItemByFullName(buildFullName).getBuildByNumber(lastBuildNumber).parent.definition.scriptPath
 			String scriptName = scriptPath.split("/")[-1]
-			if(removed.contains(scriptName)){
+			if(scriptNames.contains(scriptName)){
 				println "Script - ${scriptPath} is used in job ${buildFullName}"
 			}
 		} catch (Exception e) {
