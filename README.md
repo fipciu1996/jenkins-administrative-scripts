@@ -1,2 +1,2 @@
 # jenkins-administrative-scripts
-Scripts to used in Jenkins scriptConsole
+Scripts to used in Jenkins script console
