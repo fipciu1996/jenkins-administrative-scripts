@@ -1,9 +1,5 @@
-def buildFullNames = []
 Jenkins.instance.getAllItems(Job.class).each { job ->
-	buildFullNames.add(job.fullName)
-}
-for (def jobName : buildFullNames) {
-	Jenkins.instance.getItemByFullName(jobName).findAll { it.logRotator }.each {
+	Jenkins.instance.getItemByFullName(job.fullName).findAll { it.logRotator }.each {
 		println "--------------------"
 		println "Job Name: ${jobName}"
 		println "Number of kept builds: ${it.logRotator.getNumToKeepStr()}"
